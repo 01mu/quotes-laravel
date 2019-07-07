@@ -18,7 +18,7 @@ class Quotes extends Migration
             $table->string('author');
             $table->longText('quote');
             $table->integer('quote_string_length');
-            $table->integer('quotes_word_count');
+            $table->integer('quote_word_count');
         });
     }
 
