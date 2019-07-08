@@ -35,6 +35,7 @@ class QuotesModel extends Model
 
     public function random() {
         return QuotesModel::select('author', 'quote')
+            ->limit(1)
             ->inRandomOrder()
             ->get()[0];
     }
