@@ -25,7 +25,7 @@ class QuotesModel extends Model
     }
 
     public function authorQuotes($author, $page) {
-        return QuotesModel::select('quote')
+        return QuotesModel::select('quote', 'author')
             ->where('author', '=', $author)
             ->orderBy('quote_word_count', 'ASC')
             ->limit(50)
