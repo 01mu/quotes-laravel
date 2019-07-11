@@ -18,7 +18,6 @@ class QuotesModel extends Model
     public function quotesSearch($query, $page) {
         return QuotesModel::select('quote', 'author')
             ->where('quote', 'like', '%' . $query . '%')
-            ->orderBy('quote_word_count', 'ASC')
             ->limit(50)
             ->skip($page * 50)
             ->get();
