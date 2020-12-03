@@ -20,6 +20,7 @@ class QuotesModel extends Model
             ->where('quote', 'like', '%' . $query . '%')
             ->limit(50)
             ->skip($page * 50)
+            ->orderByRaw('CHAR_LENGTH(quote)')
             ->get();
     }
 
@@ -28,6 +29,7 @@ class QuotesModel extends Model
             ->where('author', '=', $author)
             ->limit(50)
             ->skip($page * 50)
+            ->orderByRaw('CHAR_LENGTH(quote)')
             ->get();
     }
 
